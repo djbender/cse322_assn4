@@ -1,0 +1,20 @@
+?- main2part2.
+% assn4_part2 compiled 0.00 sec, 0 bytes
+
+Station: [4, 5]
+Path: [l, u, u, l]
+true;
+
+Station: [4, 5]
+Path: [l, l, l, u, u, r]
+true;
+
+Station: [7, 3]
+Path: [u, u, u, l, u, u, r]
+true;
+
+Station: [7, 3]
+Path: [u, u, u, r, u, u, l]
+true;
+fail
+true.

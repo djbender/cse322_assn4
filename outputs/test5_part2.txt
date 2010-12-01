@@ -1,0 +1,48 @@
+?- main5part2.
+% assn4_part2 compiled 0.00 sec, 0 bytes
+
+Station: [1, 3]
+Path: [d]
+true;
+
+Station: [1, 3]
+Path: [d, r, d]
+true;
+
+Station: [1, 3]
+Path: [d, r, d, d, l]
+true;
+
+Station: [1, 3]
+Path: [d, r, d, d, l, l, u]
+true;
+
+Station: [1, 3]
+Path: [d, r, d, d, r, d, d, l, l, l, l, u, u, r, r]
+true;
+
+Station: [1, 3]
+Path: [d, r, d, d, r, d, d, l, l, l, l, u, u, r, u]
+true;
+
+Station: [1, 3]
+Path: [d, l, d]
+true;
+
+Station: [1, 3]
+Path: [d, l, d, d, r]
+true;
+
+Station: [1, 3]
+Path: [d, l, d, d, r, r, u]
+true;
+
+Station: [1, 3]
+Path: [d, l, d, d, l, d, d, r, r, r, r, u, u, l, l]
+true;
+
+Station: [1, 3]
+Path: [d, l, d, d, l, d, d, r, r, r, r, u, u, l, u]
+true;
+fail
+true.

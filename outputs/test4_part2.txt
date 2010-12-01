@@ -1,0 +1,8 @@
+?- main4part2.
+% assn4_part2 compiled 0.00 sec, 0 bytes
+
+Station: [1, 4]
+Path: [r]
+true;
+fail
+true.
