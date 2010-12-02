@@ -73,13 +73,24 @@ fdsa([Head|Tail],X,Y,Visited,Result) :-
 returnCell(Grid,X,Y,Cell) :-
 	nth1(Y,Grid,Z),
 	nth1(X,Z,Cell).
+
 /*pathFind(Grid,1,1,5,5,[],Route)*/
-pathFinder(Grid,Sx,Sy,Ex,Ey,Visted,Route) :-
+pathFinder(Grid,FuelCap,Sx,Sy,Ex,Ey,Visited) :-
+	Sx = Ex,
+	Sy = Ey.
+pathFinder(Grid,FuelCap,Sx,Sy,Ex,Ey,Visited) :-
+	/*add FuelCap stuff*/
 	neighborSquare(Grid,Sx,Sy,Rx,Ry),
 	returnCell(Grid,Rx,Ry,1),
-	append((Rx,Ry),Visited,Route),
-	append(Route,[],Visited),
-	pathFinder(Grid,Rx,Ry,Ex,Ey,Visited,Route).
+	not(member((Rx,Ry),Visited)),
+	append([(Rx,Ry)],Visited,V1),
+	pathFinder(Grid,Rx,Ry,Ex,Ey,V1).
+pathFinder(Grid,FuelCap,,Sx,Sy,Ex,Ey,Visited) :-
+	neighborSquare(Grid,Sx,Sy,Rx,Ry),
+	returnCell(Grid,Rx,Ry,1),
+	not(member((Rx,Ry),Visited)),
+	append([(Rx,Ry)],Visited,V1),
+	pathFinder(Grid,Rx,Ry,Ex,Ey,V1).
 	
 neighborSquare(Grid,X,Y,Rx,Ry) :-
 	subListLength(Grid, LX),
