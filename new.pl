@@ -69,4 +69,43 @@ fdsa([Head|Tail],X,Y,Visited,Result) :-
 	X1 is X+1,
 	fdsa(Tail,X1,Y,Visited,Result).
 
-a([
+/*might need to flip*/
+returnCell(Grid,X,Y,Cell) :-
+	nth1(Y,Grid,Z),
+	nth1(X,Z,Cell).
+/*pathFind(Grid,1,1,5,5,[],Route)*/
+pathFinder(Grid,Sx,Sy,Ex,Ey,Visted,Route) :-
+	neighborSquare(Grid,Sx,Sy,Rx,Ry),
+	returnCell(Grid,Rx,Ry,1),
+	append((Rx,Ry),Visited,Route),
+	append(Route,[],Visited),
+	pathFinder(Grid,Rx,Ry,Ex,Ey,Visited,Route).
+	
+neighborSquare(Grid,X,Y,Rx,Ry) :-
+	subListLength(Grid, LX),
+	length(Grid, LY),
+	Rx is X+1,
+	Ry is Y,
+	Rx =< LX, Rx > 0,
+	Ry =< LY, Ry > 0
+	;
+	subListLength(Grid, LX),
+	length(Grid, LY),
+	Rx is X-1,
+	Ry is Y,
+	Rx =< LX, Rx > 0,
+	Ry =< LY, Ry > 0
+	;
+	subListLength(Grid, LX),
+	length(Grid, LY),
+	Rx is X,
+	Ry is Y+1,
+	Rx =< LX, Rx > 0,
+	Ry =< LY, Ry > 0
+	;
+	subListLength(Grid, LX),
+	length(Grid, LY),
+	Rx is X,
+	Ry is Y-1,
+	Rx =< LX, Rx > 0,
+	Ry =< LY, Ry > 0.
