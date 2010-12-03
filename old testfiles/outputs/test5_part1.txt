@@ -1,8 +1,10 @@
-?- main4part1.
+?- main5part1.
 % assn4_part1 compiled 0.00 sec, 1,120 bytes
-[1, 2]
+[5, 2]
 true ;
-[1, 3]
+[5, 3]
+true ;
+[5, 4]
 true ;
 fail
 true.

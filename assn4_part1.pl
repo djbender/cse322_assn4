@@ -27,7 +27,7 @@ pathFinder(Grid,_FuelCap,Sx,Sy,Ex,Ey,Visited,OFuelCap,JustFueled) :-
 	neighborSquare(Grid,Sx,Sy,Rx,Ry),
 	returnCell(Grid,Rx,Ry,3),
 	pathFinder(Grid,OFuelCap,Sx,Sy,Ex,Ey,Visited,OFuelCap,1).
-pathFinder(Grid,FuelCap,Sx,Sy,Ex,Ey,Visited,OFuelCap,JustFueled) :-
+pathFinder(Grid,FuelCap,Sx,Sy,Ex,Ey,Visited,OFuelCap,_JustFueled) :-
 	/*debug*/
 	/*
 	write('NCell: '), write(Sx),write(','),write(Sy),write('End: '),write(Ex),write(','),write(Ey),nl,
